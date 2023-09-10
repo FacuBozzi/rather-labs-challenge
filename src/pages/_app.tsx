@@ -7,10 +7,11 @@ const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <Layout>
+        <h1>asdasd</h1>
         <Component {...pageProps} />
-      </QueryClientProvider>
-    </Layout>
+      </Layout>
+    </QueryClientProvider>
   );
 }
