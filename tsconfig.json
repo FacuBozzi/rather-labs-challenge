@@ -17,6 +17,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/utils/metamask.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/utils/metamask.js",
+    "globals.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

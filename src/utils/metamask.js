@@ -1,5 +1,4 @@
 import { ethers } from "ethers";
-import { MetaMaskInpageProvider } from "@metamask/providers";
 
 // declare global {
 //   interface Window {
@@ -16,7 +15,7 @@ export async function connectToMetaMask() {
       await window.ethereum.request({ method: "eth_requestAccounts" });
 
       // Get the user's address
-      const signer = provider.getSigner();
+      const signer = await provider.getSigner();
       const address = await signer.getAddress();
 
       return {

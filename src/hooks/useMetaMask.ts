@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { connectToMetaMask } from "../utils/metamask";
+import { useState } from "react";
 
 const queryKey = "metaMask";
 
@@ -11,6 +12,11 @@ export const useMetaMask = () => {
     initialData: { isConnected: false },
     enabled: false, // Disable auto-fetching at the beginning
   });
+
+  //Represents metamask connection status
+  const [isConnected, setIsConnected] = useState(
+    metaMaskData?.isConnected || false
+  );
 
   // Mutation to connect to MetaMask
   const connectMutation = useMutation(connectToMetaMask, {
@@ -30,7 +36,8 @@ export const useMetaMask = () => {
   return {
     connect: connectMutation.mutate,
     disconnect,
-    isConnected: metaMaskData?.isConnected || false,
+    isConnected: isConnected,
+    setIsConnected: setIsConnected,
     address: metaMaskData?.address || "",
   };
 };
