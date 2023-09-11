@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { connectToMetaMask } from "../utils/metamask";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const queryKey = "metaMask";
 
@@ -8,10 +8,15 @@ export const useMetaMask = () => {
   const queryClient = useQueryClient();
 
   // Query to get the MetaMask connection status
-  const { data: metaMaskData } = useQuery(queryKey, connectToMetaMask, {
-    initialData: { isConnected: false },
-    enabled: false, // Disable auto-fetching at the beginning
-  });
+  const { data: metaMaskData, refetch } = useQuery(
+    queryKey,
+    connectToMetaMask,
+    {
+      initialData: { isConnected: false },
+      enabled: false, // Disable auto-fetching at the beginning
+      staleTime: 0, // Forces a re-fetch on every render
+    }
+  );
 
   //Represents metamask connection status
   const [isConnected, setIsConnected] = useState(
@@ -24,6 +29,7 @@ export const useMetaMask = () => {
       // If connected, refetch the MetaMask query
       if (data.isConnected) {
         queryClient.setQueryData(queryKey, data);
+        setIsConnected(data.isConnected);
       }
     },
   });
@@ -39,5 +45,6 @@ export const useMetaMask = () => {
     isConnected: isConnected,
     setIsConnected: setIsConnected,
     address: metaMaskData?.address || "",
+    refetch,
   };
 };

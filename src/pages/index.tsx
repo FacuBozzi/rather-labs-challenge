@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useMetaMask } from "../hooks/useMetaMask";
 import { checkNetwork } from "../utils/checkNetwork";
 import { switchToGoerli } from "../utils/switchNetwork";
-import { checkConnection } from "../utils/checkConnection";
 
 const Home = () => {
-  const { isConnected, setIsConnected, address } = useMetaMask();
+  const { isConnected, setIsConnected, address, refetch } = useMetaMask();
   const [isGoerli, setIsGoerli] = useState<boolean>(false);
 
   console.log("Address", isConnected, address, isGoerli);
@@ -18,7 +17,7 @@ const Home = () => {
       setIsGoerli(isConnectedToGoerli);
     };
     connectToGoerli();
-    window.ethereum.on("chainChanged", checkNetwork);
+    refetch();
   }, [isConnected]);
 
   //Checks if the user is initially connected
@@ -30,11 +29,12 @@ const Home = () => {
       if (accounts.length) {
         setIsConnected(true);
       } else {
-        console.log(`CONNECT FALSE`);
+        setIsConnected(false);
       }
     };
     getConnection();
-  }, []);
+    refetch();
+  }, [isConnected]);
 
   return (
     <div>
