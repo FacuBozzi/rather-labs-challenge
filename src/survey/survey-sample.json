@@ -1,0 +1,54 @@
+{
+  "title": "Sample Survey",
+  "image": "https://uploads-ssl.webflow.com/629ffbf53482a7f051677d6b/62be281ac9813287b5915365_open%20graph.png",
+  "questions": [
+    {
+      "text": "Question 1",
+      "image": "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
+      "lifetimeSeconds": 10,
+      "options": [
+        {
+          "text": "Opt1"
+        },
+        {
+          "text": "Opt2"
+        },
+        {
+          "text": "Opt"
+        }
+      ]
+    },
+    {
+      "text": "Question 2",
+      "image": "https://th-thumbnailer.cdn-si-edu.com/4Nq8HbTKgX6djk07DqHqRsRuFq0=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/d5/24/d5243019-e0fc-4b3c-8cdb-48e22f38bff2/istock-183380744.jpg",
+      "lifetimeSeconds": 5,
+      "options": [
+        {
+          "text": "Opt1"
+        },
+        {
+          "text": "Opt2"
+        },
+        {
+          "text": "Opt"
+        }
+      ]
+    },
+    {
+      "text": "Question 3",
+      "image": "https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w=",
+      "lifetimeSeconds": 5,
+      "options": [
+        {
+          "text": "Opt1"
+        },
+        {
+          "text": "Opt2"
+        },
+        {
+          "text": "Opt"
+        }
+      ]
+    }
+  ]
+}
