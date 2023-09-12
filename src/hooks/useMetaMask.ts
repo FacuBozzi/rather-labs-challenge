@@ -18,10 +18,10 @@ export const useMetaMask = () => {
     }
   );
 
-  //Represents metamask connection status
-  const [isConnected, setIsConnected] = useState(
-    metaMaskData?.isConnected || false
-  );
+  // //Represents metamask connection status
+  // const [isConnected, setIsConnected] = useState(
+  //   metaMaskData?.isConnected || false
+  // );
 
   // Mutation to connect to MetaMask
   const connectMutation = useMutation(connectToMetaMask, {
@@ -29,7 +29,7 @@ export const useMetaMask = () => {
       // If connected, refetch the MetaMask query
       if (data.isConnected) {
         queryClient.setQueryData(queryKey, data);
-        setIsConnected(data.isConnected);
+        // setIsConnected(data.isConnected);
       }
     },
   });
@@ -42,8 +42,7 @@ export const useMetaMask = () => {
   return {
     connect: connectMutation.mutate,
     disconnect,
-    isConnected: isConnected,
-    setIsConnected: setIsConnected,
+    isConnected: metaMaskData?.isConnected || false,
     address: metaMaskData?.address || "",
     refetch,
   };

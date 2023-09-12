@@ -4,7 +4,7 @@ import { checkNetwork } from "../utils/checkNetwork";
 import { switchToGoerli } from "../utils/switchNetwork";
 
 const Home = () => {
-  const { isConnected, setIsConnected, address, refetch } = useMetaMask();
+  const { isConnected, address, refetch } = useMetaMask();
   const [isGoerli, setIsGoerli] = useState<boolean>(false);
 
   console.log("Address", isConnected, address, isGoerli);
@@ -17,23 +17,10 @@ const Home = () => {
       setIsGoerli(isConnectedToGoerli);
     };
     connectToGoerli();
-    refetch();
   }, [isConnected]);
 
-  //Checks if the user is initially connected
   useEffect(() => {
-    const getConnection = async () => {
-      const accounts = await window.ethereum.request({
-        method: "eth_accounts",
-      });
-      if (accounts.length) {
-        setIsConnected(true);
-      } else {
-        setIsConnected(false);
-      }
-    };
-    getConnection();
-    refetch();
+    if (!isConnected) refetch(); //react-query's refetch function to get current connectivity status
   }, [isConnected]);
 
   return (
