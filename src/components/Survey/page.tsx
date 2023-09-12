@@ -52,11 +52,11 @@ const Survey = () => {
           {/* <h2 className="text-primary-blue text-xl font-semibold">
             Question {currentQuestionIndex + 1}
           </h2> */}
-          <p className="mt-2">{currentQuestion.text}</p>
+          <p className="mt-2 text-primary-gray">{currentQuestion.text}</p>
           <img
             src={currentQuestion.image}
             alt={currentQuestion.text}
-            className="mt-4 rounded-lg"
+            className="mt-4 rounded-lg max-h-[320px]"
           />
           {/* Render options here */}
         </div>

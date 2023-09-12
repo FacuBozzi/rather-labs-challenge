@@ -22,7 +22,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/utils/metamask.js",
-    "globals.d.ts"
+    "globals.d.ts",
+    "src/components/Survey/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
