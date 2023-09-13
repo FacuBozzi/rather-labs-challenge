@@ -23,20 +23,26 @@ const Home = () => {
 
   // Use ethers.js to listen to the Transfer event for updating balance
   const updateBalance = async () => {
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    const signer = await provider.getSigner();
-    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+    if (typeof window.ethereum == "undefined") return;
 
-    contract.on("Transfer", async (_from, _to, _amount) => {
-      try {
+    try {
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(
+        contractAddress,
+        contractABI,
+        signer
+      );
+
+      contract.on("Transfer", async (_from, _to, _amount) => {
         if (_to.toLowerCase() === address.toLowerCase()) {
           // Token transfer to the user's address detected
           getUserBalance();
         }
-      } catch (error) {
-        console.log("Error getting user $QUIZ balance: ", error);
-      }
-    });
+      });
+    } catch (error) {
+      console.log("Error getting user $QUIZ balance: ", error);
+    }
   };
 
   useEffect(() => {
@@ -63,20 +69,28 @@ const Home = () => {
     <div className="flex flex-col items-center">
       {isConnected ? (
         <>
-          <h1 className="mt-10 text-primary-gray">
-            Current $QUIZ Balance: {tokenBalance}
-          </h1>
-          <Survey />
+          {isGoerli ? (
+            <>
+              <h1 className="mt-10 text-primary-gray">
+                Current $QUIZ Balance: {tokenBalance}
+              </h1>
+              <Survey />
+            </>
+          ) : (
+            <>
+              <button
+                className="text-primary-gray mt-16"
+                onClick={switchToGoerli}
+              >
+                Switch to Goerli
+              </button>
+            </>
+          )}
         </>
       ) : (
         <h1 className="text-primary-gray mt-16">
           Connect your wallet to view your $QUIZ balance
         </h1>
-      )}
-      {!isGoerli && isConnected && (
-        <button className="text-black" onClick={switchToGoerli}>
-          Switch to Goerli
-        </button>
       )}
     </div>
   );
