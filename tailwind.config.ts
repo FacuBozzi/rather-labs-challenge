@@ -18,6 +18,7 @@ const config: Config = {
         "primary-600": "rgb(48 97 175);",
         "primary-gray": "#535353",
         bgGray: "#F5F5F5",
+        antiquewhite: "#faebd7",
       },
     },
   },

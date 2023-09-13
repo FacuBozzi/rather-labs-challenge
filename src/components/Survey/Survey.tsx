@@ -21,7 +21,9 @@ const Survey: React.FC = () => {
   const [answers, setAnswers] = useState<number[]>([]); // Store user's answers
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  const surveyId = 1; //I didn't know what to pass as a _surveyId to the contract,
+  //I didn't know what to pass as a _surveyId to the contract, so
+  //i just inserted an id of 1 in the survey-sample
+  const surveyId = surveyData.surveyId;
 
   const startSurvey = () => {
     setShowStartButton(false);
@@ -121,7 +123,7 @@ const Survey: React.FC = () => {
                 className="mt-4 mb-8 rounded-lg"
               />
               <button
-                className="bg-primary-blue text-primary-gray px-4 py-2 rounded-lg"
+                className="bg-antiquewhite text-primary-gray px-4 py-2 rounded-lg"
                 onClick={startSurvey}
               >
                 Start Survey
@@ -149,7 +151,7 @@ const Survey: React.FC = () => {
                 {currentQuestion.options.map((option, index) => (
                   <button
                     key={index}
-                    className="bg-primary-blue px-4 py-2 rounded-lg mr-4"
+                    className="bg-antiquewhite px-4 py-2 rounded-lg mr-4"
                     onClick={() => handleAnswer(index + 1)}
                   >
                     {option.text}
@@ -174,7 +176,7 @@ const Survey: React.FC = () => {
             ))}
           </ul>
           <button
-            className="bg-primary-blue px-4 py-2 rounded-lg mt-4"
+            className="bg-antiquewhite px-4 py-2 rounded-lg mt-4"
             onClick={submitAnswers}
           >
             Submit Answers

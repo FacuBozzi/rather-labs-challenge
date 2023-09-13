@@ -71,7 +71,7 @@ const Home = () => {
         <>
           {isGoerli ? (
             <>
-              <h1 className="mt-10 text-primary-gray">
+              <h1 className="mt-10 font-bold text-primary-gray">
                 Current $QUIZ Balance: {tokenBalance}
               </h1>
               <Survey />
