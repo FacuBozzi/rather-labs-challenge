@@ -3,7 +3,7 @@ import { useMetaMask } from "../hooks/useMetaMask";
 import { checkNetwork } from "../utils/checkNetwork";
 import { switchToGoerli } from "../utils/switchNetwork";
 import { getTokenBalance } from "../utils/getTokenBalance";
-import Survey from "@/components/Survey/page";
+import Survey from "@/components/Survey/Survey";
 import contractABI from "../survey/survey-abi.json"; // Import the survey data
 import { ethers } from "ethers";
 import { contractAddress } from "@/utils/contractAddress";

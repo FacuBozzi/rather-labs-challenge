@@ -81,7 +81,6 @@ const Navbar: React.FC = () => {
               <a
                 className="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-primaryGray dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                 aria-current="page"
-                href="#"
                 data-te-nav-link-ref
               >
                 Rather Labs

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Navbar from "../Navbar/page";
+import Navbar from "../components/Navbar/Navbar";
 import { Inter } from "next/font/google";
 // import Footer from "./footer";
 
