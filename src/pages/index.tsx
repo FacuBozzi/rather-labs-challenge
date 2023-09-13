@@ -4,6 +4,9 @@ import { checkNetwork } from "../utils/checkNetwork";
 import { switchToGoerli } from "../utils/switchNetwork";
 import { getTokenBalance } from "../utils/getTokenBalance";
 import Survey from "@/components/Survey/page";
+import contractABI from "../survey/survey-abi.json"; // Import the survey data
+import { ethers } from "ethers";
+import { contractAddress } from "@/utils/contractAddress";
 
 const Home = () => {
   const { isConnected, address, refetch } = useMetaMask();
@@ -17,6 +20,28 @@ const Home = () => {
     connectToGoerli();
     getUserBalance();
   }, [isConnected]);
+
+  // Use ethers.js to listen to the Transfer event for updating balance
+  const updateBalance = async () => {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+    contract.on("Transfer", async (_from, _to, _amount) => {
+      try {
+        if (_to.toLowerCase() === address.toLowerCase()) {
+          // Token transfer to the user's address detected
+          getUserBalance();
+        }
+      } catch (error) {
+        console.log("Error getting user $QUIZ balance: ", error);
+      }
+    });
+  };
+
+  useEffect(() => {
+    updateBalance();
+  }, []);
 
   //Check if user is connected to goerli when the page loads
   const connectToGoerli = async () => {
@@ -35,7 +60,7 @@ const Home = () => {
   }, [isConnected]);
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       {isConnected ? (
         <>
           <h1 className="mt-10 text-primary-gray">
