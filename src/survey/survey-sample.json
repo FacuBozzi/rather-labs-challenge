@@ -1,52 +1,52 @@
 {
-  "title": "Sample Survey",
+  "title": "Fruit Survey",
   "image": "https://uploads-ssl.webflow.com/629ffbf53482a7f051677d6b/62be281ac9813287b5915365_open%20graph.png",
   "questions": [
     {
-      "text": "Question 1",
-      "image": "https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg",
+      "text": "Do you eat fruits every day?",
+      "image": "https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-3foodgroups_fruits_detailfeature.jpg?sfvrsn=64942d53_4",
       "lifetimeSeconds": 10,
       "options": [
         {
-          "text": "Opt1"
+          "text": "Yes"
         },
         {
-          "text": "Opt2"
+          "text": "No"
         },
         {
-          "text": "Opt"
+          "text": "It depends"
         }
       ]
     },
     {
-      "text": "Question 2",
-      "image": "https://th-thumbnailer.cdn-si-edu.com/4Nq8HbTKgX6djk07DqHqRsRuFq0=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/d5/24/d5243019-e0fc-4b3c-8cdb-48e22f38bff2/istock-183380744.jpg",
+      "text": "Which fruit do you prefer?",
+      "image": "https://www.caloriesecrets.net/wp-content/uploads/2018/05/apples-vs-bananas.jpg",
       "lifetimeSeconds": 5,
       "options": [
         {
-          "text": "Opt1"
+          "text": "Apples"
         },
         {
-          "text": "Opt2"
+          "text": "Bananas"
         },
         {
-          "text": "Opt"
+          "text": "I don't like any of them"
         }
       ]
     },
     {
-      "text": "Question 3",
-      "image": "https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w=",
+      "text": "If a company offered high-quality fruits to your door at an affordable price, would you hire that service?",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Culinary_fruits_front_view.jpg/500px-Culinary_fruits_front_view.jpg",
       "lifetimeSeconds": 5,
       "options": [
         {
-          "text": "Opt1"
+          "text": "Yes"
         },
         {
-          "text": "Opt2"
+          "text": "No"
         },
         {
-          "text": "Opt"
+          "text": "I would have to think about it"
         }
       ]
     }
