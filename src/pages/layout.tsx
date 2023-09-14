@@ -1,10 +1,7 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { Inter } from "next/font/google";
-
-interface LayoutProps {
-  children: ReactNode;
-}
+import { LayoutProps } from "@/types/Layout.";
 
 const inter = Inter({ subsets: ["latin"] });
 

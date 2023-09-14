@@ -1,3 +1,5 @@
+import { ethers } from "ethers";
+
 // Check if the user is connected
 export async function checkConnection() {
   try {

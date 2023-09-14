@@ -3,15 +3,7 @@ import surveyData from "../../survey/survey-sample.json"; // Import the survey d
 import surveyABI from "../../survey/survey-abi.json"; // Import the survey data
 import { ethers } from "ethers"; // Import ethers.js
 import { contractAddress } from "@/utils/contractAddress"; //$QUIZ contract address
-
-interface SurveyQuestion {
-  text: string;
-  image: string;
-  lifetimeSeconds: number;
-  options: {
-    text: string;
-  }[];
-}
+import { SurveyQuestion } from "@/types/Survey";
 
 const Survey: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);

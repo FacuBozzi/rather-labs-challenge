@@ -1,11 +1,5 @@
 import { ethers } from "ethers";
 
-// declare global {
-//   interface Window {
-//     ethereum?: MetaMaskInpageProvider;
-//   }
-// }
-
 export async function connectToMetaMask() {
   if (typeof window.ethereum !== "undefined") {
     const provider = new ethers.BrowserProvider(window.ethereum);

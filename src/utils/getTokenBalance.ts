@@ -6,7 +6,7 @@ const provider = new ethers.JsonRpcProvider(
   "https://eth-goerli.g.alchemy.com/v2/XFJe-dMTPoiW_D-QRBZNwFw79EZaLD0H"
 ); // didn't mind putting it in a .env since this project should run instantly for the ratherlabs team
 
-export async function getTokenBalance(userAddress) {
+export async function getTokenBalance(userAddress: string) {
   try {
     // Create an instance of the ERC20 contract
     const tokenContract = new ethers.Contract(
@@ -24,7 +24,9 @@ export async function getTokenBalance(userAddress) {
     console.log(`Balance of ${userAddress} in $QUIZ: ${readableBalance}`);
     return readableBalance;
   } catch (error) {
-    console.error("Error:", error);
-    return error.message;
+    if (error instanceof Error) {
+      console.error("Error:", error);
+      return error.message;
+    }
   }
 }
