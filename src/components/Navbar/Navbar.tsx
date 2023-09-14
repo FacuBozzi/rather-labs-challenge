@@ -2,7 +2,7 @@ import { useMetaMask } from "@/hooks/useMetaMask";
 import React, { useState } from "react";
 
 const Navbar: React.FC = () => {
-  const { connect, disconnect, isConnected, address } = useMetaMask();
+  const { connect, isConnected, address } = useMetaMask();
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -12,13 +12,6 @@ const Navbar: React.FC = () => {
   ) => {
     event.preventDefault();
     connect();
-  };
-
-  const handleDisconnectClick: React.MouseEventHandler<HTMLButtonElement> = (
-    event
-  ) => {
-    event.preventDefault();
-    disconnect();
   };
 
   const toggleMenu = () => {
