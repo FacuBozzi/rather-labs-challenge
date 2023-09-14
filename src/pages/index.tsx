@@ -13,8 +13,6 @@ const Home = () => {
   const [isGoerli, setIsGoerli] = useState<boolean>(false);
   const [tokenBalance, setTokenBalance] = useState<string>("0.0");
 
-  console.log("Address", isConnected, address, isGoerli);
-
   useEffect(() => {
     if (!isConnected) return;
     connectToGoerli();

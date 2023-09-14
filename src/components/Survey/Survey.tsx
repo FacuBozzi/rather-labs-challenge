@@ -44,8 +44,6 @@ const Survey: React.FC = () => {
     }
   }, [countdown]);
 
-  console.log("answers", answers);
-
   const currentQuestion: SurveyQuestion | undefined =
     surveyData.questions[currentQuestionIndex];
 
