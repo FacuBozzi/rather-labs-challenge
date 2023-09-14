@@ -1,38 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rather Labs Front-End Challenge Submission
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally and review my submission, please follow these instructions:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1.  **Clone the Repository:**  
+    `bash git clone git@github.com:FacuBozzi/rather-labs-challenge.git`
+    `cd rather-labs-challenge`
+2.  **Install Dependencies:**  
+    `pnpm install`
+3.  **Run the Application:**  
+    `pnpm run dev`
+4.  **Open your Browser:**
+    Visit [http://localhost:3000](http://localhost:3000/) to see the application in action.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Important Notes for Reviewer
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Please keep the following points in mind while reviewing my submission:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1.  **Survey Choice:** The survey included in this project is a placeholder and was chosen randomly for the sake of demonstration. The main focus of this challenge is to showcase my front-end development skills and the integration with the $QUIZ token balance.
+2.  **Token Balance Updates:** The balance of the $QUIZ token automatically updates when the $QUIZ smart contract emits the "Transfer" event. I have implemented a listener for this event, but please note that it may take a few seconds for the balance to update due to network latency and blockchain confirmation times.
+3.  **No .env File:** In this simplified project, I have omitted the use of a .env file for environment variables. Normally, I would use a .env file to store sensitive information like API keys (e.g., Alchemy API key). For this submission, I have included the API key directly in the code to simplify the setup process for the reviewer.
+4.  **Branching Strategy:** Given the simplicity of this project, I have used the main branch for development. In a real-world scenario, I would use a more structured branching strategy, such as feature branches with relevant names (e.g., "feature/xxx-xxx"), and merge them into the main branch as needed.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Thank you for taking the time to review my submission. If you have any questions or need further clarification on any aspect of the code or the project, please don't hesitate to reach out. I look forward to your feedback.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Best regards,
+Facundo
