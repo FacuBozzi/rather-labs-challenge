@@ -86,6 +86,7 @@ const Survey: React.FC = () => {
       const cooldownSeconds = Number(cooldownSecondsBigNumber);
       const lastSubmittal = Number(lastSubmittalBigNumber);
       if (lastSubmittal + cooldownSeconds > Math.floor(Date.now() / 1000)) {
+        alert("Cooldown period not finished");
         console.error("Cooldown period not finished");
         return;
       }
