@@ -13,8 +13,8 @@ const Survey: React.FC = () => {
   const [answers, setAnswers] = useState<number[]>([]); // Store user's answers
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  //I didn't know what to pass as a _surveyId to the contract, so
-  //i just inserted an id of 1 in the survey-sample
+  //Didn't know what to pass as a _surveyId to the contract, so
+  //I just inserted an id of 1 in the survey-sample
   const surveyId = surveyData.surveyId;
 
   const startSurvey = () => {
