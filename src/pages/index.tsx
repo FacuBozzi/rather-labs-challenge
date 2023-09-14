@@ -59,6 +59,7 @@ const Home = () => {
   const getUserBalance = async () => {
     const quizBalance = await getTokenBalance(address);
     setTokenBalance(quizBalance);
+    console.log("Token balance correctly updated: ", tokenBalance);
   };
 
   useEffect(() => {
