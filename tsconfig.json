@@ -15,14 +15,23 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2015",
-    "lib": ["es2019", "es2017", "DOM"],
-    "types": ["node"],
+    "lib": [
+      "es2019",
+      "es2017",
+      "DOM"
+    ],
+    "types": [
+      "node"
+    ],
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
@@ -32,5 +41,7 @@
     "globals.d.ts",
     "src/components/Survey/page.jsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
