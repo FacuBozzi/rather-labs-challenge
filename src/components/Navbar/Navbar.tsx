@@ -1,8 +1,10 @@
 import { useMetaMask } from "@/hooks/useMetaMask";
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar: React.FC = () => {
   const { connect, disconnect, isConnected, address } = useMetaMask();
+
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   // Explicitly type the event handler
   const handleConnectClick: React.MouseEventHandler<HTMLButtonElement> = async (
@@ -17,6 +19,10 @@ const Navbar: React.FC = () => {
   ) => {
     event.preventDefault();
     disconnect();
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -48,6 +54,7 @@ const Navbar: React.FC = () => {
           aria-controls="navbarSupportedContent4"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={toggleMenu}
         >
           <span className="[&>svg]:w-7">
             <svg
@@ -64,6 +71,20 @@ const Navbar: React.FC = () => {
             </svg>
           </span>
         </button>
+        {isMenuOpen && (
+          <div className="flex flex-col w-[100%] items-center font-medium uppercase text-primary-gray hover:shadow-lg">
+            <button
+              type="button"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              className="mr-3 inline-block rounded px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-primary-gray hover:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-700 text-md"
+              onClick={handleConnectClick}
+            >
+              {/* {isConnected ? address : "Connect Metamask wallet"} */}
+              {!!address && isConnected ? address : "Connect Metamask wallet"}
+            </button>
+          </div>
+        )}
 
         <div
           className="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
